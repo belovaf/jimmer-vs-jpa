@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: h2
+  sql:
+    init:
+      mode: always
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_batch_fetch_size: 15
+
+---
+spring.config.activate.on-profile: tc-postgres
+spring.datasource.url: jdbc:tc:postgresql:13-alpine:///postgres
+---
+spring.config.activate.on-profile: local-postgres
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/postgres
+  username: postgres
+  password: postgres

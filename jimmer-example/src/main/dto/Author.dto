@@ -1,0 +1,15 @@
+export example.jimmer.model.Author
+    -> package example.jimmer.dto
+
+AuthorRatingView {
+    id
+    rating
+}
+
+AuthorBestBookView {
+    id
+    bestBook {
+        name
+        rating
+    }
+}

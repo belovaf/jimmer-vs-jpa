@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: h2
+  sql:
+    init:
+      mode: always
+  data:
+    jimmer.repositories.enabled: false
+
+  graphql:
+    graphiql:
+      enabled: true
+
+jimmer:
+  language: kotlin
+  show-sql: true
+
+graphql:
+  spqr:
+    gui:
+      enabled: true
+      endpoint: /playground
+      target-endpoint: /graphql
+    base-packages: example.model
+
+---
+spring.config.activate.on-profile: h2
+jimmer.dialect: org.babyfish.jimmer.sql.dialect.H2Dialect
+---
+spring.config.activate.on-profile: tc-postgres
+spring.datasource.url: jdbc:tc:postgresql:13-alpine:///postgres
+jimmer.dialect: org.babyfish.jimmer.sql.dialect.PostgresDialect
+---
+spring.config.activate.on-profile: local-postgres
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/postgres
+  username: postgres
+  password: postgres
+jimmer.dialect: org.babyfish.jimmer.sql.dialect.PostgresDialect

@@ -1,0 +1,25 @@
+export example.jimmer.model.Book
+    -> package example.jimmer.dto
+
+BookView {
+    name
+    rating
+}
+
+input BookInput {
+    name
+    rating
+    id(author)
+    id(stores) as storeIds
+    tags {
+      name
+    }
+}
+
+specification BookSpec {
+    like/i(name)
+    ge(rating)
+    flat(tags) {
+        name as tag
+    }
+}

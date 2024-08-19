@@ -1,0 +1,22 @@
+export example.jimmer.model.Store
+    -> package example.jimmer.dto
+
+StoreNameOnlyView {
+    name
+}
+
+StoreView {
+    #allScalars
+    books {
+        flat(author) {
+            as(^ -> bookAuthor) {
+                name
+            }
+        }
+        name as storeName
+        tags {
+            name
+        }
+    }
+}
+
