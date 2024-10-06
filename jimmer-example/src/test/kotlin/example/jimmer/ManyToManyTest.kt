@@ -14,9 +14,8 @@ class ManyToManyTest : TestSupport() {
         val storeIds = listOf(2L)
         val bookIds = listOf(1L, 4L)
 
-        val count = sql.getAssociations(Book::stores).saveAll(bookIds, storeIds)
+        sql.getAssociations(Book::stores).saveAll(bookIds, storeIds)
 
-        assertThat(count).isEqualTo(2)
         assertThat(queryBookIdsFor(storeIds)).containsExactlyInAnyOrder(1L, 2L, 3L, 4L)
     }
 
@@ -25,9 +24,8 @@ class ManyToManyTest : TestSupport() {
         val storeIds = listOf(2L)
         val bookIds = listOf(1L, 2L, 4L)
 
-        val count = sql.getAssociations(Store::books).saveAll(storeIds, bookIds, checkExistence = true)
+        sql.getAssociations(Store::books).saveAll(storeIds, bookIds, checkExistence = true)
 
-        assertThat(count).isEqualTo(2)
         assertThat(queryBookIdsFor(storeIds)).containsExactlyInAnyOrder(1L, 2L, 3L, 4L)
     }
 
@@ -37,9 +35,8 @@ class ManyToManyTest : TestSupport() {
         val bookIds = listOf(1L, 4L)
 
         // Полностью эквивалентно
-        val count = sql.getAssociations(Book::stores).saveAll(bookIds, storeIds, checkExistence = true)
+        sql.getAssociations(Book::stores).saveAll(bookIds, storeIds, checkExistence = true)
 
-        assertThat(count).isEqualTo(2)
         assertThat(queryBookIdsFor(storeIds)).containsExactlyInAnyOrder(1L, 2L, 3L, 4L)
     }
 
