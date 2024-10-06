@@ -7,7 +7,7 @@ plugins {
     id("com.google.devtools.ksp") version "2.0.20-1.0.25"
 }
 
-val jimmerVersion = "0.8.184"
+val jimmerVersion = "0.8.185"
 
 java {
     sourceCompatibility = providers.gradleProperty("java.version").map(JavaVersion::toVersion).get()
