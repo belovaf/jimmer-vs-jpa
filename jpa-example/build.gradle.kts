@@ -31,13 +31,13 @@ kotlinLombok {
 dependencies {
     val springBootPlatform = platform("org.springframework.boot:spring-boot-dependencies:3.3.4")
 
-    implementation(project(":schema"))
     implementation(springBootPlatform)
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
     annotationProcessor(springBootPlatform)
     annotationProcessor("org.hibernate.orm:hibernate-jpamodelgen")
 
+    runtimeOnly(project(":schema"))
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
 

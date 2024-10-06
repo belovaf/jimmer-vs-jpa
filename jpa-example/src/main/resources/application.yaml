@@ -9,6 +9,8 @@ spring:
     properties:
       hibernate:
         default_batch_fetch_size: 15
+    hibernate:
+      ddl-auto: validate
 
 ---
 spring.config.activate.on-profile: tc-postgres

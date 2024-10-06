@@ -24,13 +24,13 @@ tasks.test {
 }
 
 dependencies {
-    implementation(project(":schema"))
     implementation(platform("org.springframework.boot:spring-boot-dependencies:3.3.4"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.babyfish.jimmer:jimmer-spring-boot-starter:$jimmerVersion")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 
+    runtimeOnly(project(":schema"))
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
 
