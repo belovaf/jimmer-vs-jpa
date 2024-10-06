@@ -1,6 +1,6 @@
 package example.jimmer.model.join
 
-import example.jimmer.ext.like
+import example.jimmer.ext.contains
 import example.jimmer.model.Author
 import example.jimmer.model.Book
 import example.jimmer.model.name
@@ -13,6 +13,6 @@ class BookAuthorNameJoin : KWeakJoin<Book, Author>() {
         source: KNonNullTable<Book>,
         target: KNonNullTable<Author>
     ): KNonNullExpression<Boolean> =
-        source.name like target.name
+        source.name contains target.name
 }
 

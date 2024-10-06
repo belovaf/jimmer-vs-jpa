@@ -46,12 +46,13 @@ class QueriesTest : TestSupport() {
     @Test
     fun customJoin() {
         val tuples = sql.createQuery(Book::class) {
+            val author = table.asTableEx()
+                .weakJoin(BookAuthorNameJoin::class)
+
             select(
                 table.id,
                 table.name,
-                table.asTableEx()
-                    .weakJoin(BookAuthorNameJoin::class)
-                    .name,
+                author.name,
             )
         }.execute()
 
