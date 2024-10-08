@@ -31,7 +31,6 @@ create table book
 (
     id        bigint generated always as identity primary key,
     name      varchar(50) not null,
-    website   varchar(100),
     rating    int         not null,
     author_id bigint
 );

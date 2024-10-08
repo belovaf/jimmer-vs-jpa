@@ -5,11 +5,11 @@ insert into author(name) values ('Bob Martin');
 insert into author(name) values ('Martin Fowler');
 insert into author(name) values ('Kavita Devgan');
 
-insert into book (name, website, rating, author_id) values ('Clean Code', null, 8, 1);
-insert into book (name, website, rating, author_id) values ('Refactoring', 'www.martinfowler.com/books/refactoring.html', 6, 2);
-insert into book (name, website, rating, author_id) values ('Patterns of Enterprise Application Architecture', 'www.martinfowler.com/books/eaa.html', 9, 2);
-insert into book (name, website, rating, author_id) values ('500 recipes', null, 5, 3);
-insert into book (name, website, rating, author_id) values ('Bob Martin autobiography', null, 7, 1);
+insert into book (name, rating, author_id) values ('Clean Code', 8, 1);
+insert into book (name, rating, author_id) values ('Refactoring', 6, 2);
+insert into book (name, rating, author_id) values ('Patterns of Enterprise Application Architecture', 9, 2);
+insert into book (name, rating, author_id) values ('500 recipes', 5, 3);
+insert into book (name, rating, author_id) values ('Bob Martin autobiography', 7, 1);
 
 insert into tag(name) values ('IT');
 insert into tag(name) values ('architecture');
