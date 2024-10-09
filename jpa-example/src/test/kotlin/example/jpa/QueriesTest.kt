@@ -43,7 +43,7 @@ class QueriesTest : TestSupport() {
         val book = query.from(Book::class.java)
         val author = book.get(Book_.author)
 
-        val subquery = query.subquery(Int::class.javaObjectType)
+        val subquery = query.subquery(Int::class.java)
         val store = subquery.from(Store::class.java)
         val b = store.join(Store_.books)
 
