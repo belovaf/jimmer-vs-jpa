@@ -9,11 +9,9 @@ StoreView {
     #allScalars
     books {
         flat(author) {
-            as(^ -> bookAuthor) {
-                name
-            }
+            name as authorName
         }
-        name as storeName
+        name as bookName
         tags {
             name
         }
